@@ -31,7 +31,7 @@ def self.artist_count
   @@artists.uniq
 end
 
-def genre_count
+def self.genre_count
   hash_count = Hash.new(0)
   @@genres.each do |genre|
     hash_count[genre] += 1
