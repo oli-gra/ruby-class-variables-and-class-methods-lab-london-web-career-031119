@@ -28,7 +28,11 @@ def self.genres
 end
 
 def self.artist_count
-  
+  hash_count = Hash.new(0)
+  @@artists.each do |artist|
+    hash_count[artist] += 1
+  end
+  hash_count
 end
 
 def self.genre_count
