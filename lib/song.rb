@@ -10,13 +10,9 @@ def initialize (name,artist,genre)
   @name = name
   @@count += 1
   @artist = artist
-  #if @@artists.find {|artists| artists==artist} == nil
-    @@artists << artist
-  #end
+  @@artists << artist
   @genre = genre
-  #if @@genres.find {|genres| genres==genre} == nil
-    @@genres << genre
-  #end
+  @@genres << genre
 end
 
 def self.count
@@ -33,6 +29,14 @@ end
 
 def self.artist_count
   @@artists.uniq
+end
+
+def genre_count
+  hash_count = Hash.new(0)
+  @@genres.each do |genre|
+    hash_count[genre] += 1
+  end
+  hash_count
 end
 
 end
